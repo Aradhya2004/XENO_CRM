@@ -21,12 +21,14 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: false, // Set to true if using https
+      secure: true,               // ✅ required for HTTPS
       httpOnly: true,
+      sameSite: 'None',           // ✅ required for cross-origin cookies
       maxAge: 24 * 60 * 60 * 1000 // 1 day
     }
   })
 );
+
 app.use(passport.initialize());
 app.use(passport.session());
 
