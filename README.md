@@ -31,8 +31,8 @@ management, and rich data visualizations using pie charts.
 
 1. **Clone the repository:**
    ```bash
-  git clone [https://github.com/Aradhya2004/XENO_CRM.git](https://github.com/Aradhya2004/XENO_CRM.git)
-  cd XENO_CRM
+   git clone [https://github.com/Aradhya2004/XENO_CRM.git](https://github.com/Aradhya2004/XENO_CRM.git)
+   cd xeno-crm
    ```
 
 2. **Install dependencies:**
