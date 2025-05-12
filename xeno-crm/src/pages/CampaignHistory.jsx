@@ -59,12 +59,11 @@ const CampaignHistory = () => {
       setExpandedCampaign(campaignId);
     }
   };
-
   return (
     <div className="p-8">
       <h2 className="text-2xl font-semibold mb-4">Campaign History</h2>
       <table className="w-full text-left border-collapse">
-        <thead>
+        <thead className="bg-[#002d9c] text-white">
           <tr>
             <th className="border p-2">Campaign Name</th>
             <th className="border p-2">Rules</th>
@@ -92,7 +91,7 @@ const CampaignHistory = () => {
                     className="bg-green-600 text-white px-2 py-1 rounded mr-2"
                     onClick={() => deliverCampaign(campaign._id)}
                   >
-                    Deliver
+                    Deliver Message
                   </button>
                   <button
                     className="bg-blue-600 text-white px-2 py-1 rounded"
@@ -126,9 +125,8 @@ const CampaignHistory = () => {
                           <tr key={log._id}>
                             <td className="border p-2">{log.customerId}</td>
                             <td
-                              className={`border p-2 ${
-                                log.status === "Sent" ? "text-green-600" : "text-red-600"
-                              }`}
+                              className={`border p-2 ${log.status === "Sent" ? "text-green-600" : "text-red-600"
+                                }`}
                             >
                               {log.status}
                             </td>

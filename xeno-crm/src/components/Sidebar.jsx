@@ -46,15 +46,16 @@ function Sidebar() {
                 <h2 className="text-2xl mt-5 mb-5 text-center">My Dashboard</h2>
                 <ul className="space-y-4">
                     {navItems.map((item, index) => (
-                        <li
-                            key={index}
-                            className="flex items-center gap-4 hover:bg-gray-700 p-2 rounded cursor-pointer"
-                        >
-                            <img src={item.icon} alt={item.label} className="w-10 h-10" />
-                            <Link to={item.path} className="flex-1">
-                                {item.label}
+                        <li key={index}>
+                            <Link
+                                to={item.path}
+                                className="flex items-center gap-4 hover:bg-gray-700 p-2 rounded cursor-pointer"
+                            >
+                                <img src={item.icon} alt={item.label} className="w-10 h-10" />
+                                <span className="flex-1">{item.label}</span>
                             </Link>
                         </li>
+
                     ))}
                 </ul>
             </div>

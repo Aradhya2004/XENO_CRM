@@ -12,7 +12,7 @@ const AISuggestions = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/ai/suggestions`,
+        "http://localhost:5000/api/ai/suggestions",
         {
           campaignObjective,
           audienceDetails,
@@ -24,6 +24,7 @@ const AISuggestions = () => {
 
       const { messageTemplates, segmentationRules } = response.data;
 
+      // ✅ Setting state with the response:
       setSuggestions({
         messageTemplates,
         segmentationRules: segmentationRules || [],
