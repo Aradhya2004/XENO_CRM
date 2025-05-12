@@ -11,9 +11,12 @@ const CampaignAnalytics = () => {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/analytics/${campaignId}`, {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/analytics/${campaignId}`,
+          {
+            withCredentials: true,
+          }
+        );
         setAnalyticsData(response.data);
       } catch (error) {
         console.error(error.message);

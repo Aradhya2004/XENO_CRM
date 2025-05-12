@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
-import Campaigns from "./pages/Campaigns";
 import DataIngestion from "./pages/DataIngestion";
 import OrderList from "./pages/OrderList";
 import CampaignCreation from "./pages/CampaignCreation";
@@ -42,14 +41,6 @@ const App = () => {
           element={
             <Layout>
               <Dashboard />
-            </Layout>
-          }
-        />
-        <Route
-          path="/campaigns"
-          element={
-            <Layout>
-              <Campaigns />
             </Layout>
           }
         />

@@ -12,7 +12,7 @@ const DataIngestion = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/customers", {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/customers`, {
           withCredentials: true, // To include session-based auth cookies if needed
         });
         setCustomers(response.data); // Set the customers in state
@@ -35,7 +35,7 @@ const DataIngestion = () => {
     setError("");  // Reset error
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/customers",
+        `${import.meta.env.VITE_BACKEND_URL}/api/customers`,
         customer,
         { withCredentials: true }
       );
@@ -60,7 +60,7 @@ const DataIngestion = () => {
     setError("");  // Reset error
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/orders",
+        `${import.meta.env.VITE_BACKEND_URL}/api/orders`,
         order,
         { withCredentials: true }
       );
@@ -130,7 +130,7 @@ const DataIngestion = () => {
           className="bg-white p-8 rounded-2xl shadow-lg transition hover:shadow-xl"
         >
           <h2 className="text-2xl font-semibold text-green-700 mb-6">Add Order</h2>
-          {error && <p className="text-red-600 mb-4">{error}</p>} 
+          {error && <p className="text-red-600 mb-4">{error}</p>}
           <div className="space-y-4">
             {/* Customer Dropdown */}
             <select

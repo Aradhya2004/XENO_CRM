@@ -9,10 +9,14 @@ const CampaignPreview = () => {
   // Submit to Backend
   const confirmCampaign = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/campaigns", {
-        name: campaignName,
-        rules: rules,
-      }, { withCredentials: true });
+      const response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/campaigns`,
+        {
+          name: campaignName,
+          rules: rules,
+        },
+        { withCredentials: true }
+      );
 
       alert("Campaign Created Successfully!");
       navigate("/campaign-history");

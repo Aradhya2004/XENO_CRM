@@ -7,7 +7,7 @@ const OrderList = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/orders", {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/orders`, {
           withCredentials: true, // 🔥 Required to include session cookie
         });
         setOrders(response.data);

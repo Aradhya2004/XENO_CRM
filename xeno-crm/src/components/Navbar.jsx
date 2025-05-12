@@ -8,7 +8,7 @@ const Navbar = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/auth/user", {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/user`, {
           withCredentials: true,
         });
         setUser(response.data);
@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:5000/api/auth/logout", {
+      await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/logout`, {
         withCredentials: true,
       });
       window.location.href = "/";

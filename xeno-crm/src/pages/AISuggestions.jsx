@@ -12,7 +12,7 @@ const AISuggestions = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/ai/suggestions",
+        `${import.meta.env.VITE_BACKEND_URL}/api/ai/suggestions`,
         {
           campaignObjective,
           audienceDetails,
@@ -24,7 +24,6 @@ const AISuggestions = () => {
 
       const { messageTemplates, segmentationRules } = response.data;
 
-      // ✅ Setting state with the response:
       setSuggestions({
         messageTemplates,
         segmentationRules: segmentationRules || [],
@@ -69,8 +68,6 @@ const AISuggestions = () => {
         <div className="mt-8">
           <h3 className="text-xl font-semibold mb-2">Generated Suggestions:</h3>
           <div className="bg-gray-100 p-4 rounded-md">
-
-            {/* Message Templates */}
             <h4 className="font-semibold">Message Templates:</h4>
             <ul className="list-disc pl-5">
               {suggestions.messageTemplates.map((template, index) => (
@@ -88,7 +85,6 @@ const AISuggestions = () => {
               ))}
             </ul>
 
-            {/* Segmentation Rules */}
             {suggestions.segmentationRules.length > 0 && (
               <>
                 <h4 className="font-semibold mt-4">Segmentation Rules:</h4>
