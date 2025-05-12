@@ -9,6 +9,8 @@ require("./config/passportSetup");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.set('trust proxy', 1); 
+
 // Middleware
 app.use(cors({
   origin: process.env.FRONTEND_URL,
