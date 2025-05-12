@@ -9,8 +9,6 @@ require("./config/passportSetup");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.set('trust proxy', 1); 
-
 // Middleware
 app.use(cors({
   origin: process.env.FRONTEND_URL,
@@ -23,14 +21,12 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,               // ✅ required for HTTPS
+      secure: false, // Set to true if using https
       httpOnly: true,
-      sameSite: 'None',           // ✅ required for cross-origin cookies
       maxAge: 24 * 60 * 60 * 1000 // 1 day
     }
   })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -1,12 +1,6 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-
   const dashboardItems = [
     { label: "Data Ingestion", image: "/icons/user.png", path: "/ingestion" },
     { label: "Order List", image: "/icons/order.png", path: "/orders" },
@@ -15,27 +9,10 @@ const Dashboard = () => {
     { label: "AI Suggestions", image: "/icons/AI.png", path: "/ai-suggestions" },
   ];
 
-  useEffect(() => {
-    const getUser = async () => {
-      try {
-        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/user`, {
-          withCredentials: true,
-        });
-        setUser(res.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("User not authenticated", error.response?.status);
-        navigate("/"); // redirect to login
-      }
-    };
-    getUser();
-  }, [navigate]);
-
-  if (loading) return <div className="p-10">Loading...</div>;
-
   return (
     <div className="p-6 md:p-10 bg-gray-100 min-h-screen">
       <h1 className="text-3xl font-bold text-gray-800 mb-10">Dashboard</h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {dashboardItems.map((item, index) => (
           <Link
