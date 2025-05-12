@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.*  # in case you use multiple env files
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.vscode/
+.idea/
+*.swp
+
+# Build / generated files
+dist/
+build/
+coverage/
+tmp/
+*.tsbuildinfo
+
+# Database / local runtime files
+*.sqlite
+*.db
+*.pid
+*.seed
+dump.rdb
+
+# Optional - local testing
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Misc
+*.tgz
