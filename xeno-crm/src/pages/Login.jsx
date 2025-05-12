@@ -15,7 +15,7 @@ function Login() {
                         className="w-6 h-6"
                     />
                     <a
-                        href={`${import.meta.env.VITE_BACKEND_URL}api/auth/google`}
+                        href={`${import.meta.env.VITE_BACKEND_URL}/api/auth/google`}
                     >
                         Continue With Google
                     </a>
