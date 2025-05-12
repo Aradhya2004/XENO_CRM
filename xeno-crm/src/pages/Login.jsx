@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Login() {
-
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100">
             <div className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm text-center">
@@ -16,7 +15,7 @@ function Login() {
                         className="w-6 h-6"
                     />
                     <a
-                        href="http://localhost:5000/api/auth/google"
+                        href={`${import.meta.env.VITE_BACKEND_URL}api/auth/google`}
                     >
                         Continue With Google
                     </a>
