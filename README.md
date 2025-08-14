@@ -7,7 +7,7 @@ management, and rich data visualizations using pie charts.
 - **Customer Data Ingestion:** Add and manage customer details with ease.
 - **Campaign Creation:** Create and manage targeted marketing campaigns.
 - **Campaign History:** Track past campaigns and their metadata.
-- **Order History:** View detailed order records associated with each customer.
+- **Order History:** View detailed order records associated with each customer. 
 - **AI-Powered Suggestions:** Generate smart recommendations using Google Gen AI (Google AI Studio).
 - **Email Notifications:** Send confirmation emails to customers using Nodemailer.
 - **Data Visualization:** Visualize customer demographics and behaviors via pie charts.
