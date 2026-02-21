@@ -114,5 +114,3 @@ Google Generative AI
 - AI suggestions are generated based on sample prompts and limited context.
 
 ---
-
-Feel free to contribute, raise issues, or suggest improvements!
